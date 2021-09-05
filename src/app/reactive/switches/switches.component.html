@@ -1,0 +1,89 @@
+<h2>Reactivos: Switches</h2>
+<hr />
+
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
+  <!-- Check box -->
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Genero</label>
+    <div class="col-sm-9">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="radioMasculino"
+          value="M"
+          formControlName="genero"
+          required
+          checked
+        />
+        <label class="form-check-label" for="radioMasculino"> Masculino </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="radioFemenimo"
+          value="F"
+          formControlName="genero"
+          required
+        />
+        <label class="form-check-label" for="radioFemenimo"> Femenimo </label>
+      </div>
+    </div>
+  </div>
+  <!-- Switches -->
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Notificaciones</label>
+    <div class="col-sm-9">
+      <div class="custom-control custom-switch">
+        <input
+          type="checkbox"
+          formControlName="notificaciones"
+          class="custom-control-input"
+          id="customSwitch1"
+        />
+        <label class="custom-control-label mt-2" for="customSwitch1"
+          >Quiero Recibir Notificaciones</label
+        >
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label"></label>
+    <div class="col-sm-9">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="defaultCheck1"
+          formControlName="condiciones"
+        />
+        <label class="form-check-label" for="defaultCheck1">
+          Termino y condiciones
+        </label>
+      </div>
+    </div>
+  </div>
+  <!-- Boton submit -->
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary float-right" type="submit">Guardar</button>
+    </div>
+  </div>
+</form>
+
+<h5>valor del formulario</h5>
+<pre> {{ miFormulario.value | json }}</pre>
+<br />
+<h5>Persona</h5>
+<pre> {{ persona | json }}</pre>
+<br />
+
+<h5>Valid</h5>
+<pre>{{ miFormulario.valid }}</pre>
+<br />
+<!--
+<h5>Terminos</h5>
+<pre>{{ miFormulario.controls?.terminos?.errors | json }}</pre>
+
+<pre>Condiciones:</pre>  -->
